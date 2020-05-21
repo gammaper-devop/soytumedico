@@ -2767,6 +2767,20 @@ ul {
   margin-bottom: 35px;
 }
 
+/* Estilo del boton de whatsapp*/
+.appWhatsapp {
+  position: fixed;
+  right: 26px;
+  bottom: 100px;
+  width: 60px;
+  z-index: 1000;
+}
+
+.appWhatsapp img {
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 576px) {
   /* line 53, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_about_us.scss */
   .about_us .about_us_text p {
