@@ -1,11 +1,11 @@
 <?php
 
-    $to = "rockybd1995@gmail.com";
-    $from = $_REQUEST['email'];
-    $name = $_REQUEST['name'];
-    $subject = $_REQUEST['subject'];
-    $number = $_REQUEST['number'];
-    $cmessage = $_REQUEST['message'];
+    $to = "gabriel.martin.marquez@gmail.com";
+    $from = $_POST['email'];
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $number = $_POST['number'];
+    $cmessage = $_POST['message'];
 
     $headers = "From: $from";
 	$headers = "From: " . $from . "\r\n";
@@ -32,6 +32,7 @@
 	$body .= "</tbody></table>";
 	$body .= "</body></html>";
 
-    $send = mail($to, $subject, $body, $headers);
+    /* $send = mail($to, $subject, $body, $headers); */
+    mail($to, $subject, $body, $headers);
 
 ?>
