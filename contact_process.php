@@ -5,7 +5,7 @@
     $name = $_POST['name'];
     $subject = $_POST['subject'];
     $number = $_POST['number'];
-    $cmessage = $_POST['message'];
+    $message = $_POST['message'];
 
     $headers = "From: $from";
 	$headers = "From: " . $from . "\r\n";
@@ -26,13 +26,18 @@
 	$body .= "<td style='border:none;'><strong>Name:</strong> {$name}</td>";
 	$body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
 	$body .= "</tr>";
-	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$csubject}</td></tr>";
+	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$subject}</td></tr>";
 	$body .= "<tr><td></td></tr>";
-	$body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
+	$body .= "<tr><td colspan='2' style='border:none;'>{$message}</td></tr>";
 	$body .= "</tbody></table>";
 	$body .= "</body></html>";
 
     /* $send = mail($to, $subject, $body, $headers); */
-    mail($to, $subject, $body, $headers);
+    $mail = mail($to, $subject, $body, $headers);
 
+    if ($mail)
+    {
+    	echo "<script>'El correo fue enviado exitosamente!.'</script>";
+    	echo "<script> setTimeout(\"location.href='contact.html'\",1000)</script>";
+    }
 ?>
